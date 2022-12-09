@@ -13,6 +13,9 @@ export class CreateLoginDto {
   @IsNotEmpty()
   name: string;
 
+  @IsNotEmpty()
+  admin: number;
+
   photo: string;
 
   birthAt: string;

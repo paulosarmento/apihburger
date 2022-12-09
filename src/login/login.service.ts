@@ -126,6 +126,7 @@ export class LoginService {
     birthAt,
     document,
     phone,
+    admin,
   }: CreateLoginDto) {
     if (await this.getByEmail(email)) {
       throw new BadRequestException('Este e-mail já está cadastrado');
@@ -135,6 +136,7 @@ export class LoginService {
       data: {
         email,
         password: bcrypt.hashSync(password, 10),
+        admin,
       },
     });
 
